@@ -2,7 +2,7 @@ name: web-CICD
 
 on:
   schedule:
-    - cron: "0 10 * * *"
+    - cron:  "0 10 * * *"
   push:
     branches:
       - main
@@ -11,7 +11,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -25,7 +25,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-
       - name: Build Docker image
         run: |
           IMAGE_TAG=$(echo "${{ github.sha }}" | cut -c1-8)
@@ -35,14 +34,6 @@ jobs:
             -t zarrcloud/portfolio:latest \
             .
 
-      - name: Set up kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG_BASE64 }}" | base64 -d > $HOME/.kube/config
-          chmod 600 $HOME/.kube/config
-          kubectl get nodes
-
-
       - name: Push & Deploy via Helm
         run: |
           IMAGE_TAG=$(echo "${{ github.sha }}" | cut -c1-8)
@@ -51,7 +42,7 @@ jobs:
           docker push zarrcloud/portfolio:${IMAGE_TAG}
           docker push zarrcloud/portfolio:latest
 
-          # Deploy using the chart at helm/webapp (relative to repo root)
+          # Deploy using the chart at webapp_pipeline/app (relative to repo root)
           helm upgrade webapp webapp_pipeline/app \
             --set image.tag=${IMAGE_TAG} \
             --reuse-values
