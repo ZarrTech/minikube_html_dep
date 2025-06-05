@@ -49,6 +49,6 @@ jobs:
 
       - name: Wait for rollout to finish
         run: |
-          kubectl rollout status deployment/portfolio-deployment \
+          kubectl rollout status deployment/vproapp \
             --namespace default --timeout=120s
 
