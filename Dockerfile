@@ -6,5 +6,5 @@ RUN git clone https://github.com/ZarrTech/DevOps_portfolio.git
 
 # Stage 2: Serve with nginx
 FROM nginx
-COPY --from=builder /app/DevOps_portfolio/index.html /usr/share/nginx/html/index.html
+COPY --from=builder /app/minikube_workspace/src/index.html /usr/share/nginx/html/index.html
 
