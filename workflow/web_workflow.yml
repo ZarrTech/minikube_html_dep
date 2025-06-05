@@ -28,7 +28,7 @@ jobs:
           docker build \
             -t zarrcloud/portfolio:${IMAGE_TAG} \
             -t zarrcloud/portfolio:latest \
-            /devops_portfolio/
+            .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -45,7 +45,7 @@ jobs:
           docker push zarrcloud/portfolio:latest
 
           # Deploy using the chart at helm/webapp (relative to repo root)
-          helm upgrade webapp /webapp_pipeline/app \
+          helm upgrade webapp webapp_pipeline/app \
             --set image.tag=${IMAGE_TAG} \
             --reuse-values
 
