@@ -1,0 +1,4 @@
+image:
+  repository: zarrcloud/portfolio
+  tag:       latest
+  pullPolicy: always

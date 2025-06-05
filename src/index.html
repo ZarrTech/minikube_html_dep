@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My DevOps Journey</title>
+  <style>
+    /* Dark gradient background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.6;
+    }
+
+    /* Overlay effect on entire page */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+
+    /* Main container with slight transparency and blur */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Heading styles */
+    h1 {
+      margin-top: 0;
+      font-size: 2.5rem;
+      color: #00ffe7;
+      transition: color 0.3s ease;
+    }
+    h1:hover {
+      color: #33fff2;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      color: #00ffe7;
+      transition: color 0.3s ease;
+    }
+    h2:hover {
+      color: #33fff2;
+    }
+
+    /* Paragraph styles */
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Quote styling */
+    .quote {
+      font-style: italic;
+      color: #ffb6c1;
+      margin: 1.5rem 0;
+      border-left: 4px solid #ffb6c1;
+      padding-left: 1rem;
+    }
+
+    /* Link styles */
+    a {
+      color: #00ffe7;
+      text-decoration: none;
+      position: relative;
+    }
+    a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #00ffe7;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+    }
+    a:hover::after {
+      width: 100%;
+    }
+
+    /* Footer/Connect section */
+    .connect {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .connect a {
+      font-weight: bold;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, I'm Prosper Lazarus</h1>
+    <p>
+      My journey into <strong>DevOps</strong> has been anything but conventional. I transitioned with a deep passion for automation, configuration management, and the elegance of scalable systems.
+    </p>
+    <p>
+      Over time, I became fascinated by the synergy between infrastructure and code. I’m driven by the endless possibilities that <strong>AI</strong> brings to infrastructure predictive scaling, intelligent alerting, and more.
+    </p>
+
+    <h2>My Philosophy</h2>
+    <p>
+      I approach technology with an open mind. Every tool has its place, and there’s always something to learn. The potential of <strong>quantum computing</strong> excites me, especially as I’ve developed a personal theory about <strong>quantum networking</strong> the idea that data could be transmitted between systems without physical cabling like fiber optics. It’s uncharted, but undeniably intriguing.
+    </p>
+
+    <h2>Inspiration</h2>
+    <p class="quote">
+      “There’s someone who inspires me every single day, her name is <strong>Glück</strong>. She doesn’t know how much she means to me or how often her presence fuels my ambition, but she’s the light behind my fire.”  
+    </p>
+    <p>
+      This journey isn’t just about technology, it’s about becoming a better human, fueled by love, curiosity, and the pursuit of building meaningful things.
+    </p>
+
+    <div class="connect">
+      <h2>Let’s Connect</h2>
+      <p>
+        You can view my projects and portfolio on GitHub:
+        <a href="https://github.com/your-github-username" target="_blank" rel="noopener">
+          github.com/ZarrTech
+        </a>
+      </p>
+      <p>
+        You’ll often find me somewhere between a terminal and a notebook full of theories. The future is bright and beautifully unpredictable.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
