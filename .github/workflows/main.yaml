@@ -46,7 +46,6 @@ jobs:
           helm upgrade webapp webapp_pipeline/app \
             --set image.tag=${IMAGE_TAG} \
             --set image.pullPolicy=Always \
-            --set podRestartTs=${TIMESTAMP} \
             --reuse-values
 
       - name: Wait for rollout to finish
