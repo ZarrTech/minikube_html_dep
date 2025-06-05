@@ -2,9 +2,9 @@
 FROM alpine AS builder
 RUN apk add --no-cache git
 WORKDIR /app
-RUN git clone https://github.com/ZarrTech/DevOps_portfolio.git
+RUN git clone https://github.com/ZarrTech/minikube_html_dep.git
 
 # Stage 2: Serve with nginx
 FROM nginx
-COPY --from=builder /app/minikube_workspace/src/index.html /usr/share/nginx/html/index.html
+COPY --from=builder /app/minikube_html_dep/src/index.html /usr/share/nginx/html/index.html
 
