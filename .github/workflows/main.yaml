@@ -45,7 +45,8 @@ jobs:
           # Deploy using the chart at webapp_pipeline/app (relative to repo root)
           helm upgrade webapp webapp_pipeline/app \
             --set image.tag=${IMAGE_TAG} \
-            --set image.pullPolicy=IfNotPresent \
+            --set image.pullPolicy=Always \
+            --set podRestartTs=${TIMESTAMP} \
             --reuse-values
 
       - name: Wait for rollout to finish
